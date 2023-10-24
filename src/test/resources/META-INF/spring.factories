@@ -1,0 +1,3 @@
+org.springframework.test.context.ContextCustomizerFactory = com.sbm.\
+    tableaurealtime.config.SqlTestContainersSpringContextCustomizerFactory,com.\
+    sbm.tableaurealtime.config.KafkaTestContainersSpringContextCustomizerFactory
