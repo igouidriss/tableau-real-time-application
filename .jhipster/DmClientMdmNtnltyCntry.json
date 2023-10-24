@@ -1,0 +1,70 @@
+{
+  "applications": "*",
+  "changelogDate": "20231024190842",
+  "dto": "mapstruct",
+  "entityTableName": "dm_client_mdm_ntnlty_cntry",
+  "fields": [
+    {
+      "fieldName": "prtyFk",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "frstNtnltFrmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "frstContinent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scndNtnltFrmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "scndContinent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thrdNtnltFrmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "thrdContinent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "frthNtnltFrmt",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "frthContinent",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "techLineage",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "techCreatedDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "techUpdatedDate",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "techMapping",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "techComment",
+      "fieldType": "String"
+    }
+  ],
+  "name": "DmClientMdmNtnltyCntry",
+  "pagination": "pagination",
+  "relationships": [],
+  "searchEngine": "no",
+  "service": "serviceImpl"
+}

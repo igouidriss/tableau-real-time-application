@@ -1,0 +1,973 @@
+<div>
+  <h2 id="page-heading" data-cy="FtOResvHeading">
+    <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.home.title"
+      >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.home.title')</span
+    >
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.home.refreshListLabel"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.home.refreshListLabel')</span
+        >
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-ft-o-resv"
+        [routerLink]="['/ft-o-resv/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.home.createLabel"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.home.createLabel')</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="ftOResvs?.length === 0">
+    <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.home.notFound"
+      >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.home.notFound')</span
+    >
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="ftOResvs && ftOResvs.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numLigne">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numLigne"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numLigne')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="resort">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resort"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resort')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="resvNameId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resvNameId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resvNameId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clientOId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.clientOId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.clientOId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeChb">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChb"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChb')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="businessDate">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.businessDate"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.businessDate')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numOrdre">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numOrdre"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numOrdre')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="confirmationNo">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.confirmationNo"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.confirmationNo')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="clientMdmId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.clientMdmId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.clientMdmId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nameId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nameId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nameId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nameIdLigne">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nameIdLigne"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nameIdLigne')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="contactId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.contactId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.contactId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="agenceId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.agenceId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.agenceId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="agenceNom">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.agenceNom"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.agenceNom')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="societeId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.societeId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.societeId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="groupeId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.groupeId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.groupeId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="membreId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.membreId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.membreId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="sourceProfileId">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.sourceProfileId"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.sourceProfileId')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numBloc">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numBloc"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numBloc')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="statutResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="statutVip">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutVip"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutVip')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateDebutLigne">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateDebutLigne"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateDebutLigne')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateFinLigne">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateFinLigne"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateFinLigne')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateFinOrigine">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateFinOrigine"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateFinOrigine')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="dateAnn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateAnn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateAnn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="pseudoRoomYn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.pseudoRoomYn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.pseudoRoomYn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="complementaireYn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.complementaireYn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.complementaireYn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="interneYn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.interneYn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.interneYn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="walkinYn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.walkinYn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.walkinYn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="createurResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.createurResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.createurResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nomCreateurResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nomCreateurResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nomCreateurResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codePays">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codePays"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codePays')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libPays">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libPays"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libPays')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeNationalite">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeNationalite"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeNationalite')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libNationalite">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libNationalite"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libNationalite')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeSource">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeSource"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeSource')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libSource">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libSource"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libSource')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeGrandSource">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeGrandSource"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeGrandSource')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeOrigine">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeOrigine"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeOrigine')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libOrigine">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libOrigine"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libOrigine')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeMarche">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeMarche"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeMarche')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libMarche">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libMarche"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libMarche')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeGrandMarche">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeGrandMarche"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeGrandMarche')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libGrandMarche">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libGrandMarche"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libGrandMarche')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codePrix">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codePrix"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codePrix')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="categPrix">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.categPrix"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.categPrix')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="libPrix">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libPrix"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libPrix')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="numChb">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numChb"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numChb')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeChbLigne">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChbLigne"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChbLigne')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="descriptionTypeChb">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.descriptionTypeChb"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.descriptionTypeChb')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeTypeChb">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeTypeChb"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeTypeChb')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="classChb">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.classChb"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.classChb')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="statutChbResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutChbResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutChbResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="typeChbDeReservation">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChbDeReservation"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChbDeReservation')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="descriptionTypeChbDeResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.descriptionTypeChbDeResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.descriptionTypeChbDeResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="codeTypeChbDeResv">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeTypeChbDeResv"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeTypeChbDeResv')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="circuitDistribution">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.circuitDistribution"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.circuitDistribution')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="circuitDistribUserRegroup">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.circuitDistribUserRegroup"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.circuitDistribUserRegroup')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbResvAnn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbResvAnn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbResvAnn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbNuitee">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuitee"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuitee')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbNuiteeNnDed">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuiteeNnDed"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuiteeNnDed')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbNuiteeGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuiteeGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuiteeGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbOccupationMultiple">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbOccupationMultiple"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbOccupationMultiple')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbAduGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbAduGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbAduGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbEnfGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbEnfGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbEnfGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbPersDayUGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersDayUGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersDayUGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbPersArrGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersArrGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersArrGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbPersDepGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersDepGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersDepGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbPersAnn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersAnn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersAnn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbPersNoshow">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersNoshow"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersNoshow')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbChbDayUGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbDayUGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbDayUGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbChbArrGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbArrGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbArrGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbChbDepGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbDepGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbDepGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbChbAnn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbAnn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbAnn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="nbChbNoshow">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbNoshow"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbNoshow')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuNetChambreGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetChambreGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetChambreGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuTaxeChambreGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeChambreGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeChambreGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuNetBqGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetBqGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetBqGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuTaxeBqGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeBqGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeBqGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuNetExtraGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetExtraGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetExtraGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuTaxeExtraGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeExtraGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeExtraGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuNetTotalGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetTotalGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetTotalGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="revenuTaxeTotalGlobal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeTotalGlobal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeTotalGlobal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodRevenuChambre">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuChambre"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuChambre')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodRevenuBq">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuBq"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuBq')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodRevenuExtra">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuExtra"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuExtra')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodRevenuTotal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuTotal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuTotal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prodChambreNbNuitees">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodChambreNbNuitees"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodChambreNbNuitees')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="datesSejourRensYn">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.datesSejourRensYn"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.datesSejourRensYn')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techEventType">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techEventType"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techEventType')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techResvInvType">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techResvInvType"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techResvInvType')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techOrigine">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techOrigine"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techOrigine')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techGrpNumOrdre">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techGrpNumOrdre"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techGrpNumOrdre')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techCreateDate">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techCreateDate"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techCreateDate')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techUpdateDate">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techUpdateDate"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techUpdateDate')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="resvNameIdPrincipal">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resvNameIdPrincipal"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resvNameIdPrincipal')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ftOResv of ftOResvs; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/ft-o-resv', ftOResv.id, 'view']">{{ ftOResv.id }}</a>
+          </td>
+          <td>{{ ftOResv.numLigne }}</td>
+          <td>{{ ftOResv.resort }}</td>
+          <td>{{ ftOResv.resvNameId }}</td>
+          <td>{{ ftOResv.clientOId }}</td>
+          <td>{{ ftOResv.typeChb }}</td>
+          <td>{{ ftOResv.businessDate | formatMediumDate }}</td>
+          <td>{{ ftOResv.numOrdre }}</td>
+          <td>{{ ftOResv.confirmationNo }}</td>
+          <td>{{ ftOResv.clientMdmId }}</td>
+          <td>{{ ftOResv.nameId }}</td>
+          <td>{{ ftOResv.nameIdLigne }}</td>
+          <td>{{ ftOResv.contactId }}</td>
+          <td>{{ ftOResv.agenceId }}</td>
+          <td>{{ ftOResv.agenceNom }}</td>
+          <td>{{ ftOResv.societeId }}</td>
+          <td>{{ ftOResv.groupeId }}</td>
+          <td>{{ ftOResv.membreId }}</td>
+          <td>{{ ftOResv.sourceProfileId }}</td>
+          <td>{{ ftOResv.numBloc }}</td>
+          <td>{{ ftOResv.statutResv }}</td>
+          <td>{{ ftOResv.statutVip }}</td>
+          <td>{{ ftOResv.dateDebutLigne | formatMediumDate }}</td>
+          <td>{{ ftOResv.dateFinLigne | formatMediumDate }}</td>
+          <td>{{ ftOResv.dateFinOrigine | formatMediumDate }}</td>
+          <td>{{ ftOResv.dateAnn | formatMediumDate }}</td>
+          <td>{{ ftOResv.pseudoRoomYn }}</td>
+          <td>{{ ftOResv.complementaireYn }}</td>
+          <td>{{ ftOResv.interneYn }}</td>
+          <td>{{ ftOResv.walkinYn }}</td>
+          <td>{{ ftOResv.createurResv }}</td>
+          <td>{{ ftOResv.nomCreateurResv }}</td>
+          <td>{{ ftOResv.codePays }}</td>
+          <td>{{ ftOResv.libPays }}</td>
+          <td>{{ ftOResv.codeNationalite }}</td>
+          <td>{{ ftOResv.libNationalite }}</td>
+          <td>{{ ftOResv.codeSource }}</td>
+          <td>{{ ftOResv.libSource }}</td>
+          <td>{{ ftOResv.codeGrandSource }}</td>
+          <td>{{ ftOResv.codeOrigine }}</td>
+          <td>{{ ftOResv.libOrigine }}</td>
+          <td>{{ ftOResv.codeMarche }}</td>
+          <td>{{ ftOResv.libMarche }}</td>
+          <td>{{ ftOResv.codeGrandMarche }}</td>
+          <td>{{ ftOResv.libGrandMarche }}</td>
+          <td>{{ ftOResv.codePrix }}</td>
+          <td>{{ ftOResv.categPrix }}</td>
+          <td>{{ ftOResv.libPrix }}</td>
+          <td>{{ ftOResv.numChb }}</td>
+          <td>{{ ftOResv.typeChbLigne }}</td>
+          <td>{{ ftOResv.descriptionTypeChb }}</td>
+          <td>{{ ftOResv.codeTypeChb }}</td>
+          <td>{{ ftOResv.classChb }}</td>
+          <td>{{ ftOResv.statutChbResv }}</td>
+          <td>{{ ftOResv.typeChbDeReservation }}</td>
+          <td>{{ ftOResv.descriptionTypeChbDeResv }}</td>
+          <td>{{ ftOResv.codeTypeChbDeResv }}</td>
+          <td>{{ ftOResv.circuitDistribution }}</td>
+          <td>{{ ftOResv.circuitDistribUserRegroup }}</td>
+          <td>{{ ftOResv.nbResvAnn }}</td>
+          <td>{{ ftOResv.nbNuitee }}</td>
+          <td>{{ ftOResv.nbNuiteeNnDed }}</td>
+          <td>{{ ftOResv.nbNuiteeGlobal }}</td>
+          <td>{{ ftOResv.nbOccupationMultiple }}</td>
+          <td>{{ ftOResv.nbAduGlobal }}</td>
+          <td>{{ ftOResv.nbEnfGlobal }}</td>
+          <td>{{ ftOResv.nbPersDayUGlobal }}</td>
+          <td>{{ ftOResv.nbPersArrGlobal }}</td>
+          <td>{{ ftOResv.nbPersDepGlobal }}</td>
+          <td>{{ ftOResv.nbPersAnn }}</td>
+          <td>{{ ftOResv.nbPersNoshow }}</td>
+          <td>{{ ftOResv.nbChbDayUGlobal }}</td>
+          <td>{{ ftOResv.nbChbArrGlobal }}</td>
+          <td>{{ ftOResv.nbChbDepGlobal }}</td>
+          <td>{{ ftOResv.nbChbAnn }}</td>
+          <td>{{ ftOResv.nbChbNoshow }}</td>
+          <td>{{ ftOResv.revenuNetChambreGlobal }}</td>
+          <td>{{ ftOResv.revenuTaxeChambreGlobal }}</td>
+          <td>{{ ftOResv.revenuNetBqGlobal }}</td>
+          <td>{{ ftOResv.revenuTaxeBqGlobal }}</td>
+          <td>{{ ftOResv.revenuNetExtraGlobal }}</td>
+          <td>{{ ftOResv.revenuTaxeExtraGlobal }}</td>
+          <td>{{ ftOResv.revenuNetTotalGlobal }}</td>
+          <td>{{ ftOResv.revenuTaxeTotalGlobal }}</td>
+          <td>{{ ftOResv.prodRevenuChambre }}</td>
+          <td>{{ ftOResv.prodRevenuBq }}</td>
+          <td>{{ ftOResv.prodRevenuExtra }}</td>
+          <td>{{ ftOResv.prodRevenuTotal }}</td>
+          <td>{{ ftOResv.prodChambreNbNuitees }}</td>
+          <td>{{ ftOResv.datesSejourRensYn }}</td>
+          <td>{{ ftOResv.techEventType }}</td>
+          <td>{{ ftOResv.techResvInvType }}</td>
+          <td>{{ ftOResv.techOrigine }}</td>
+          <td>{{ ftOResv.techGrpNumOrdre }}</td>
+          <td>{{ ftOResv.techCreateDate | formatMediumDate }}</td>
+          <td>{{ ftOResv.techUpdateDate | formatMediumDate }}</td>
+          <td>{{ ftOResv.resvNameIdPrincipal }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/ft-o-resv', ftOResv.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">__jhiTransformTranslate__('entity.action.view')</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/ft-o-resv', ftOResv.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">__jhiTransformTranslate__('entity.action.edit')</span>
+              </button>
+
+              <button type="submit" (click)="delete(ftOResv)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete"
+                  >__jhiTransformTranslate__('entity.action.delete')</span
+                >
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="ftOResvs && ftOResvs.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,37 @@
+{
+  "tableauRealTimeApplicationApp": {
+    "dmClientMdmNtnltyCntry": {
+      "home": {
+        "title": "Dm Client Mdm Ntnlty Cntries",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dm Client Mdm Ntnlty Cntry",
+        "createOrEditLabel": "Create or edit a Dm Client Mdm Ntnlty Cntry",
+        "notFound": "No Dm Client Mdm Ntnlty Cntries found"
+      },
+      "created": "A new Dm Client Mdm Ntnlty Cntry is created with identifier {{ param }}",
+      "updated": "A Dm Client Mdm Ntnlty Cntry is updated with identifier {{ param }}",
+      "deleted": "A Dm Client Mdm Ntnlty Cntry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dm Client Mdm Ntnlty Cntry {{ id }}?"
+      },
+      "detail": {
+        "title": "Dm Client Mdm Ntnlty Cntry"
+      },
+      "id": "ID",
+      "prtyFk": "Prty Fk",
+      "frstNtnltFrmt": "Frst Ntnlt Frmt",
+      "frstContinent": "Frst Continent",
+      "scndNtnltFrmt": "Scnd Ntnlt Frmt",
+      "scndContinent": "Scnd Continent",
+      "thrdNtnltFrmt": "Thrd Ntnlt Frmt",
+      "thrdContinent": "Thrd Continent",
+      "frthNtnltFrmt": "Frth Ntnlt Frmt",
+      "frthContinent": "Frth Continent",
+      "techLineage": "Tech Lineage",
+      "techCreatedDate": "Tech Created Date",
+      "techUpdatedDate": "Tech Updated Date",
+      "techMapping": "Tech Mapping",
+      "techComment": "Tech Comment"
+    }
+  }
+}

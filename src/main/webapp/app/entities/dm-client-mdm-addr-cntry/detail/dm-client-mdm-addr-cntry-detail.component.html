@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dmClientMdmAddrCntry">
+      <h2 data-cy="dmClientMdmAddrCntryDetailsHeading">
+        <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.detail.title"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.detail.title')</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span></dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.prtyFk"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.prtyFk')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.prtyFk }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frstCntryFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frstCntryFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.frstCntryFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frstContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frstContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.frstContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.scndCntryFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.scndCntryFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.scndCntryFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.scndContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.scndContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.scndContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.thrdCntryFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.thrdCntryFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.thrdCntryFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.thrdContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.thrdContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.thrdContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frthCntryFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frthCntryFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.frthCntryFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frthContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.frthContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.frthContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techLineage"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techLineage')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.techLineage }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techCreatedDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techCreatedDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.techCreatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techUpdatedDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techUpdatedDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.techUpdatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techMapping"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techMapping')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.techMapping }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techComment"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmAddrCntry.techComment')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmAddrCntry.techComment }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"
+          >__jhiTransformTranslate__('entity.action.back')</span
+        >
+      </button>
+
+      <button type="button" [routerLink]="['/dm-client-mdm-addr-cntry', dmClientMdmAddrCntry.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"
+          >__jhiTransformTranslate__('entity.action.edit')</span
+        >
+      </button>
+    </div>
+  </div>
+</div>

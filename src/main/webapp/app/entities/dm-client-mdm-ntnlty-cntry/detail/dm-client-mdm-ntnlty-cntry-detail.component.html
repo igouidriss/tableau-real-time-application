@@ -1,0 +1,148 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="dmClientMdmNtnltyCntry">
+      <h2 data-cy="dmClientMdmNtnltyCntryDetailsHeading">
+        <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.detail.title"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.detail.title')</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span></dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.prtyFk"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.prtyFk')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.prtyFk }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstNtnltFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstNtnltFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.frstNtnltFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.frstContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndNtnltFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndNtnltFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.scndNtnltFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.scndContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdNtnltFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdNtnltFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.thrdNtnltFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.thrdContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthNtnltFrmt"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthNtnltFrmt')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.frthNtnltFrmt }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthContinent"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthContinent')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.frthContinent }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techLineage"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techLineage')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.techLineage }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techCreatedDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techCreatedDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.techCreatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techUpdatedDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techUpdatedDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.techUpdatedDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techMapping"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techMapping')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.techMapping }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techComment"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techComment')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ dmClientMdmNtnltyCntry.techComment }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"
+          >__jhiTransformTranslate__('entity.action.back')</span
+        >
+      </button>
+
+      <button type="button" [routerLink]="['/dm-client-mdm-ntnlty-cntry', dmClientMdmNtnltyCntry.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"
+          >__jhiTransformTranslate__('entity.action.edit')</span
+        >
+      </button>
+    </div>
+  </div>
+</div>

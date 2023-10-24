@@ -7,7 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entities",
-        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
+        "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+        "dmClientMdmAddrCntry": "Dm Client Mdm Addr Cntry",
+        "dmClientMdmNtnltyCntry": "Dm Client Mdm Ntnlty Cntry",
+        "ftOResv": "Ft O Resv",
+        "dmOResv": "Dm O Resv"
       },
       "account": {
         "main": "Account",
