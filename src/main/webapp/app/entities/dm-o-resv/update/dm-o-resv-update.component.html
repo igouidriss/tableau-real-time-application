@@ -1,0 +1,1323 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dm-o-resv-heading"
+        data-cy="DmOResvCreateUpdateHeading"
+        jhiTranslate="tableauRealTimeApplicationApp.dmOResv.home.createOrEditLabel"
+      >
+        __jhiTransformTranslate__('tableauRealTimeApplicationApp.dmOResv.home.createOrEditLabel')
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.numLigne" for="field_numLigne">Num Ligne</label>
+          <input type="number" class="form-control" name="numLigne" id="field_numLigne" data-cy="numLigne" formControlName="numLigne" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.resort" for="field_resort">Resort</label>
+          <input type="text" class="form-control" name="resort" id="field_resort" data-cy="resort" formControlName="resort" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.resvNameId" for="field_resvNameId"
+            >Resv Name Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="resvNameId"
+            id="field_resvNameId"
+            data-cy="resvNameId"
+            formControlName="resvNameId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.clientOId" for="field_clientOId">Client O Id</label>
+          <input type="text" class="form-control" name="clientOId" id="field_clientOId" data-cy="clientOId" formControlName="clientOId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.typeChb" for="field_typeChb">Type Chb</label>
+          <input type="text" class="form-control" name="typeChb" id="field_typeChb" data-cy="typeChb" formControlName="typeChb" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.confirmationNo" for="field_confirmationNo"
+            >Confirmation No</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="confirmationNo"
+            id="field_confirmationNo"
+            data-cy="confirmationNo"
+            formControlName="confirmationNo"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.clientMdmId" for="field_clientMdmId"
+            >Client Mdm Id</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="clientMdmId"
+            id="field_clientMdmId"
+            data-cy="clientMdmId"
+            formControlName="clientMdmId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nameId" for="field_nameId">Name Id</label>
+          <input type="number" class="form-control" name="nameId" id="field_nameId" data-cy="nameId" formControlName="nameId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.parentResvNameId" for="field_parentResvNameId"
+            >Parent Resv Name Id</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="parentResvNameId"
+            id="field_parentResvNameId"
+            data-cy="parentResvNameId"
+            formControlName="parentResvNameId"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.contactId" for="field_contactId">Contact Id</label>
+          <input type="number" class="form-control" name="contactId" id="field_contactId" data-cy="contactId" formControlName="contactId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.agenceId" for="field_agenceId">Agence Id</label>
+          <input type="number" class="form-control" name="agenceId" id="field_agenceId" data-cy="agenceId" formControlName="agenceId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.agenceNom" for="field_agenceNom">Agence Nom</label>
+          <input type="text" class="form-control" name="agenceNom" id="field_agenceNom" data-cy="agenceNom" formControlName="agenceNom" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.societeId" for="field_societeId">Societe Id</label>
+          <input type="number" class="form-control" name="societeId" id="field_societeId" data-cy="societeId" formControlName="societeId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.groupeId" for="field_groupeId">Groupe Id</label>
+          <input type="number" class="form-control" name="groupeId" id="field_groupeId" data-cy="groupeId" formControlName="groupeId" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.numBloc" for="field_numBloc">Num Bloc</label>
+          <input type="number" class="form-control" name="numBloc" id="field_numBloc" data-cy="numBloc" formControlName="numBloc" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.typeResv" for="field_typeResv">Type Resv</label>
+          <input type="text" class="form-control" name="typeResv" id="field_typeResv" data-cy="typeResv" formControlName="typeResv" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.statutResv" for="field_statutResv"
+            >Statut Resv</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="statutResv"
+            id="field_statutResv"
+            data-cy="statutResv"
+            formControlName="statutResv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateDebutResv" for="field_dateDebutResv"
+            >Date Debut Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateDebutResv"
+              data-cy="dateDebutResv"
+              type="text"
+              class="form-control"
+              name="dateDebutResv"
+              ngbDatepicker
+              #dateDebutResvDp="ngbDatepicker"
+              formControlName="dateDebutResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateDebutResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateFinResv" for="field_dateFinResv"
+            >Date Fin Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateFinResv"
+              data-cy="dateFinResv"
+              type="text"
+              class="form-control"
+              name="dateFinResv"
+              ngbDatepicker
+              #dateFinResvDp="ngbDatepicker"
+              formControlName="dateFinResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateFinResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.truncDateDebutResv" for="field_truncDateDebutResv"
+            >Trunc Date Debut Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_truncDateDebutResv"
+              data-cy="truncDateDebutResv"
+              type="text"
+              class="form-control"
+              name="truncDateDebutResv"
+              ngbDatepicker
+              #truncDateDebutResvDp="ngbDatepicker"
+              formControlName="truncDateDebutResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="truncDateDebutResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.truncDateFinResv" for="field_truncDateFinResv"
+            >Trunc Date Fin Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_truncDateFinResv"
+              data-cy="truncDateFinResv"
+              type="text"
+              class="form-control"
+              name="truncDateFinResv"
+              ngbDatepicker
+              #truncDateFinResvDp="ngbDatepicker"
+              formControlName="truncDateFinResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="truncDateFinResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateAnnResv" for="field_dateAnnResv"
+            >Date Ann Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateAnnResv"
+              data-cy="dateAnnResv"
+              type="text"
+              class="form-control"
+              name="dateAnnResv"
+              ngbDatepicker
+              #dateAnnResvDp="ngbDatepicker"
+              formControlName="dateAnnResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateAnnResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.pseudoRoomYn" for="field_pseudoRoomYn"
+            >Pseudo Room Yn</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="pseudoRoomYn"
+            id="field_pseudoRoomYn"
+            data-cy="pseudoRoomYn"
+            formControlName="pseudoRoomYn"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.createurResv" for="field_createurResv"
+            >Createur Resv</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="createurResv"
+            id="field_createurResv"
+            data-cy="createurResv"
+            formControlName="createurResv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nomCreateurResv" for="field_nomCreateurResv"
+            >Nom Createur Resv</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="nomCreateurResv"
+            id="field_nomCreateurResv"
+            data-cy="nomCreateurResv"
+            formControlName="nomCreateurResv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeGarantie" for="field_codeGarantie"
+            >Code Garantie</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeGarantie"
+            id="field_codeGarantie"
+            data-cy="codeGarantie"
+            formControlName="codeGarantie"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.flgDed" for="field_flgDed">Flg Ded</label>
+          <input type="text" class="form-control" name="flgDed" id="field_flgDed" data-cy="flgDed" formControlName="flgDed" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codePays" for="field_codePays">Code Pays</label>
+          <input type="text" class="form-control" name="codePays" id="field_codePays" data-cy="codePays" formControlName="codePays" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libPays" for="field_libPays">Lib Pays</label>
+          <input type="text" class="form-control" name="libPays" id="field_libPays" data-cy="libPays" formControlName="libPays" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeNationalite" for="field_codeNationalite"
+            >Code Nationalite</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeNationalite"
+            id="field_codeNationalite"
+            data-cy="codeNationalite"
+            formControlName="codeNationalite"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libNationalite" for="field_libNationalite"
+            >Lib Nationalite</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="libNationalite"
+            id="field_libNationalite"
+            data-cy="libNationalite"
+            formControlName="libNationalite"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeSource" for="field_codeSource"
+            >Code Source</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeSource"
+            id="field_codeSource"
+            data-cy="codeSource"
+            formControlName="codeSource"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libSource" for="field_libSource">Lib Source</label>
+          <input type="text" class="form-control" name="libSource" id="field_libSource" data-cy="libSource" formControlName="libSource" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeGrandSource" for="field_codeGrandSource"
+            >Code Grand Source</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeGrandSource"
+            id="field_codeGrandSource"
+            data-cy="codeGrandSource"
+            formControlName="codeGrandSource"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeOrigine" for="field_codeOrigine"
+            >Code Origine</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeOrigine"
+            id="field_codeOrigine"
+            data-cy="codeOrigine"
+            formControlName="codeOrigine"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libOrigine" for="field_libOrigine"
+            >Lib Origine</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="libOrigine"
+            id="field_libOrigine"
+            data-cy="libOrigine"
+            formControlName="libOrigine"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeMarche" for="field_codeMarche"
+            >Code Marche</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeMarche"
+            id="field_codeMarche"
+            data-cy="codeMarche"
+            formControlName="codeMarche"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libMarche" for="field_libMarche">Lib Marche</label>
+          <input type="text" class="form-control" name="libMarche" id="field_libMarche" data-cy="libMarche" formControlName="libMarche" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeGrandMarche" for="field_codeGrandMarche"
+            >Code Grand Marche</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeGrandMarche"
+            id="field_codeGrandMarche"
+            data-cy="codeGrandMarche"
+            formControlName="codeGrandMarche"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libGrandMarche" for="field_libGrandMarche"
+            >Lib Grand Marche</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="libGrandMarche"
+            id="field_libGrandMarche"
+            data-cy="libGrandMarche"
+            formControlName="libGrandMarche"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codePrix" for="field_codePrix">Code Prix</label>
+          <input type="text" class="form-control" name="codePrix" id="field_codePrix" data-cy="codePrix" formControlName="codePrix" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.categPrix" for="field_categPrix">Categ Prix</label>
+          <input type="text" class="form-control" name="categPrix" id="field_categPrix" data-cy="categPrix" formControlName="categPrix" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.libPrix" for="field_libPrix">Lib Prix</label>
+          <input type="text" class="form-control" name="libPrix" id="field_libPrix" data-cy="libPrix" formControlName="libPrix" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.numChb" for="field_numChb">Num Chb</label>
+          <input type="text" class="form-control" name="numChb" id="field_numChb" data-cy="numChb" formControlName="numChb" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.descriptionTypeChb" for="field_descriptionTypeChb"
+            >Description Type Chb</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="descriptionTypeChb"
+            id="field_descriptionTypeChb"
+            data-cy="descriptionTypeChb"
+            formControlName="descriptionTypeChb"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeTypeChb" for="field_codeTypeChb"
+            >Code Type Chb</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeTypeChb"
+            id="field_codeTypeChb"
+            data-cy="codeTypeChb"
+            formControlName="codeTypeChb"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.classChb" for="field_classChb">Class Chb</label>
+          <input type="text" class="form-control" name="classChb" id="field_classChb" data-cy="classChb" formControlName="classChb" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.caractChb" for="field_caractChb">Caract Chb</label>
+          <input type="text" class="form-control" name="caractChb" id="field_caractChb" data-cy="caractChb" formControlName="caractChb" />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.typeChbDeReservation"
+            for="field_typeChbDeReservation"
+            >Type Chb De Reservation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="typeChbDeReservation"
+            id="field_typeChbDeReservation"
+            data-cy="typeChbDeReservation"
+            formControlName="typeChbDeReservation"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.descriptionTypeChbDeResv"
+            for="field_descriptionTypeChbDeResv"
+            >Description Type Chb De Resv</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="descriptionTypeChbDeResv"
+            id="field_descriptionTypeChbDeResv"
+            data-cy="descriptionTypeChbDeResv"
+            formControlName="descriptionTypeChbDeResv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.codeTypeChbDeResv" for="field_codeTypeChbDeResv"
+            >Code Type Chb De Resv</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="codeTypeChbDeResv"
+            id="field_codeTypeChbDeResv"
+            data-cy="codeTypeChbDeResv"
+            formControlName="codeTypeChbDeResv"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.statutDeReservation" for="field_statutDeReservation"
+            >Statut De Reservation</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="statutDeReservation"
+            id="field_statutDeReservation"
+            data-cy="statutDeReservation"
+            formControlName="statutDeReservation"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.circuitDistribution" for="field_circuitDistribution"
+            >Circuit Distribution</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="circuitDistribution"
+            id="field_circuitDistribution"
+            data-cy="circuitDistribution"
+            formControlName="circuitDistribution"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.circuitDistribUserRegroup"
+            for="field_circuitDistribUserRegroup"
+            >Circuit Distrib User Regroup</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="circuitDistribUserRegroup"
+            id="field_circuitDistribUserRegroup"
+            data-cy="circuitDistribUserRegroup"
+            formControlName="circuitDistribUserRegroup"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.numCrs" for="field_numCrs">Num Crs</label>
+          <input type="text" class="form-control" name="numCrs" id="field_numCrs" data-cy="numCrs" formControlName="numCrs" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.typeRefCrs" for="field_typeRefCrs"
+            >Type Ref Crs</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="typeRefCrs"
+            id="field_typeRefCrs"
+            data-cy="typeRefCrs"
+            formControlName="typeRefCrs"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.crsInsertDate" for="field_crsInsertDate"
+            >Crs Insert Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_crsInsertDate"
+              data-cy="crsInsertDate"
+              type="text"
+              class="form-control"
+              name="crsInsertDate"
+              ngbDatepicker
+              #crsInsertDateDp="ngbDatepicker"
+              formControlName="crsInsertDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="crsInsertDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateCreaResv" for="field_dateCreaResv"
+            >Date Crea Resv</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateCreaResv"
+              data-cy="dateCreaResv"
+              type="text"
+              class="form-control"
+              name="dateCreaResv"
+              ngbDatepicker
+              #dateCreaResvDp="ngbDatepicker"
+              formControlName="dateCreaResv"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateCreaResvDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.datePremier" for="field_datePremier"
+            >Date Premier</label
+          >
+          <div class="input-group">
+            <input
+              id="field_datePremier"
+              data-cy="datePremier"
+              type="text"
+              class="form-control"
+              name="datePremier"
+              ngbDatepicker
+              #datePremierDp="ngbDatepicker"
+              formControlName="datePremier"
+            />
+            <button type="button" class="btn btn-secondary" (click)="datePremierDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.statutPremier" for="field_statutPremier"
+            >Statut Premier</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="statutPremier"
+            id="field_statutPremier"
+            data-cy="statutPremier"
+            formControlName="statutPremier"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateDernier" for="field_dateDernier"
+            >Date Dernier</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateDernier"
+              data-cy="dateDernier"
+              type="text"
+              class="form-control"
+              name="dateDernier"
+              ngbDatepicker
+              #dateDernierDp="ngbDatepicker"
+              formControlName="dateDernier"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateDernierDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.statutDernier" for="field_statutDernier"
+            >Statut Dernier</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="statutDernier"
+            id="field_statutDernier"
+            data-cy="statutDernier"
+            formControlName="statutDernier"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.dateDernierPseudo" for="field_dateDernierPseudo"
+            >Date Dernier Pseudo</label
+          >
+          <div class="input-group">
+            <input
+              id="field_dateDernierPseudo"
+              data-cy="dateDernierPseudo"
+              type="text"
+              class="form-control"
+              name="dateDernierPseudo"
+              ngbDatepicker
+              #dateDernierPseudoDp="ngbDatepicker"
+              formControlName="dateDernierPseudo"
+            />
+            <button type="button" class="btn btn-secondary" (click)="dateDernierPseudoDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.statutDernierPseudo" for="field_statutDernierPseudo"
+            >Statut Dernier Pseudo</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="statutDernierPseudo"
+            id="field_statutDernierPseudo"
+            data-cy="statutDernierPseudo"
+            formControlName="statutDernierPseudo"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.diffDtCreaAnn" for="field_diffDtCreaAnn"
+            >Diff Dt Crea Ann</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="diffDtCreaAnn"
+            id="field_diffDtCreaAnn"
+            data-cy="diffDtCreaAnn"
+            formControlName="diffDtCreaAnn"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.diffDtArrAnn" for="field_diffDtArrAnn"
+            >Diff Dt Arr Ann</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="diffDtArrAnn"
+            id="field_diffDtArrAnn"
+            data-cy="diffDtArrAnn"
+            formControlName="diffDtArrAnn"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.leadtime" for="field_leadtime">Leadtime</label>
+          <input type="number" class="form-control" name="leadtime" id="field_leadtime" data-cy="leadtime" formControlName="leadtime" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.los" for="field_los">Los</label>
+          <input type="number" class="form-control" name="los" id="field_los" data-cy="los" formControlName="los" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.occupantsGroupe" for="field_occupantsGroupe"
+            >Occupants Groupe</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="occupantsGroupe"
+            id="field_occupantsGroupe"
+            data-cy="occupantsGroupe"
+            formControlName="occupantsGroupe"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbNuitee" for="field_nbNuitee">Nb Nuitee</label>
+          <input type="number" class="form-control" name="nbNuitee" id="field_nbNuitee" data-cy="nbNuitee" formControlName="nbNuitee" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbNuiteeNnDed" for="field_nbNuiteeNnDed"
+            >Nb Nuitee Nn Ded</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nbNuiteeNnDed"
+            id="field_nbNuiteeNnDed"
+            data-cy="nbNuiteeNnDed"
+            formControlName="nbNuiteeNnDed"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbResvAnn" for="field_nbResvAnn">Nb Resv Ann</label>
+          <input type="number" class="form-control" name="nbResvAnn" id="field_nbResvAnn" data-cy="nbResvAnn" formControlName="nbResvAnn" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbAdu" for="field_nbAdu">Nb Adu</label>
+          <input type="number" class="form-control" name="nbAdu" id="field_nbAdu" data-cy="nbAdu" formControlName="nbAdu" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbEnf" for="field_nbEnf">Nb Enf</label>
+          <input type="number" class="form-control" name="nbEnf" id="field_nbEnf" data-cy="nbEnf" formControlName="nbEnf" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbPersDayU" for="field_nbPersDayU"
+            >Nb Pers Day U</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nbPersDayU"
+            id="field_nbPersDayU"
+            data-cy="nbPersDayU"
+            formControlName="nbPersDayU"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbPersArr" for="field_nbPersArr">Nb Pers Arr</label>
+          <input type="number" class="form-control" name="nbPersArr" id="field_nbPersArr" data-cy="nbPersArr" formControlName="nbPersArr" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbPersDep" for="field_nbPersDep">Nb Pers Dep</label>
+          <input type="number" class="form-control" name="nbPersDep" id="field_nbPersDep" data-cy="nbPersDep" formControlName="nbPersDep" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbPersAnn" for="field_nbPersAnn">Nb Pers Ann</label>
+          <input type="number" class="form-control" name="nbPersAnn" id="field_nbPersAnn" data-cy="nbPersAnn" formControlName="nbPersAnn" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbPersNoshow" for="field_nbPersNoshow"
+            >Nb Pers Noshow</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nbPersNoshow"
+            id="field_nbPersNoshow"
+            data-cy="nbPersNoshow"
+            formControlName="nbPersNoshow"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbChbDayU" for="field_nbChbDayU"
+            >Nb Chb Day U</label
+          >
+          <input type="number" class="form-control" name="nbChbDayU" id="field_nbChbDayU" data-cy="nbChbDayU" formControlName="nbChbDayU" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbChbArr" for="field_nbChbArr">Nb Chb Arr</label>
+          <input type="number" class="form-control" name="nbChbArr" id="field_nbChbArr" data-cy="nbChbArr" formControlName="nbChbArr" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbChbDep" for="field_nbChbDep">Nb Chb Dep</label>
+          <input type="number" class="form-control" name="nbChbDep" id="field_nbChbDep" data-cy="nbChbDep" formControlName="nbChbDep" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbChbAnn" for="field_nbChbAnn">Nb Chb Ann</label>
+          <input type="number" class="form-control" name="nbChbAnn" id="field_nbChbAnn" data-cy="nbChbAnn" formControlName="nbChbAnn" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.nbChbNoshow" for="field_nbChbNoshow"
+            >Nb Chb Noshow</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="nbChbNoshow"
+            id="field_nbChbNoshow"
+            data-cy="nbChbNoshow"
+            formControlName="nbChbNoshow"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetChambre" for="field_revenuNetChambre"
+            >Revenu Net Chambre</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetChambre"
+            id="field_revenuNetChambre"
+            data-cy="revenuNetChambre"
+            formControlName="revenuNetChambre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeChambre" for="field_revenuTaxeChambre"
+            >Revenu Taxe Chambre</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeChambre"
+            id="field_revenuTaxeChambre"
+            data-cy="revenuTaxeChambre"
+            formControlName="revenuTaxeChambre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetChambreGlobal"
+            for="field_revenuNetChambreGlobal"
+            >Revenu Net Chambre Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetChambreGlobal"
+            id="field_revenuNetChambreGlobal"
+            data-cy="revenuNetChambreGlobal"
+            formControlName="revenuNetChambreGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeChambreGlobal"
+            for="field_revenuTaxeChambreGlobal"
+            >Revenu Taxe Chambre Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeChambreGlobal"
+            id="field_revenuTaxeChambreGlobal"
+            data-cy="revenuTaxeChambreGlobal"
+            formControlName="revenuTaxeChambreGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetBq" for="field_revenuNetBq"
+            >Revenu Net Bq</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetBq"
+            id="field_revenuNetBq"
+            data-cy="revenuNetBq"
+            formControlName="revenuNetBq"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeBq" for="field_revenuTaxeBq"
+            >Revenu Taxe Bq</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeBq"
+            id="field_revenuTaxeBq"
+            data-cy="revenuTaxeBq"
+            formControlName="revenuTaxeBq"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetBqGlobal" for="field_revenuNetBqGlobal"
+            >Revenu Net Bq Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetBqGlobal"
+            id="field_revenuNetBqGlobal"
+            data-cy="revenuNetBqGlobal"
+            formControlName="revenuNetBqGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeBqGlobal" for="field_revenuTaxeBqGlobal"
+            >Revenu Taxe Bq Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeBqGlobal"
+            id="field_revenuTaxeBqGlobal"
+            data-cy="revenuTaxeBqGlobal"
+            formControlName="revenuTaxeBqGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetExtra" for="field_revenuNetExtra"
+            >Revenu Net Extra</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetExtra"
+            id="field_revenuNetExtra"
+            data-cy="revenuNetExtra"
+            formControlName="revenuNetExtra"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeExtra" for="field_revenuTaxeExtra"
+            >Revenu Taxe Extra</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeExtra"
+            id="field_revenuTaxeExtra"
+            data-cy="revenuTaxeExtra"
+            formControlName="revenuTaxeExtra"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetExtraGlobal"
+            for="field_revenuNetExtraGlobal"
+            >Revenu Net Extra Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetExtraGlobal"
+            id="field_revenuNetExtraGlobal"
+            data-cy="revenuNetExtraGlobal"
+            formControlName="revenuNetExtraGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeExtraGlobal"
+            for="field_revenuTaxeExtraGlobal"
+            >Revenu Taxe Extra Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeExtraGlobal"
+            id="field_revenuTaxeExtraGlobal"
+            data-cy="revenuTaxeExtraGlobal"
+            formControlName="revenuTaxeExtraGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetTotal" for="field_revenuNetTotal"
+            >Revenu Net Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetTotal"
+            id="field_revenuNetTotal"
+            data-cy="revenuNetTotal"
+            formControlName="revenuNetTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeTotal" for="field_revenuTaxeTotal"
+            >Revenu Taxe Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeTotal"
+            id="field_revenuTaxeTotal"
+            data-cy="revenuTaxeTotal"
+            formControlName="revenuTaxeTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuNetTotalGlobal"
+            for="field_revenuNetTotalGlobal"
+            >Revenu Net Total Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuNetTotalGlobal"
+            id="field_revenuNetTotalGlobal"
+            data-cy="revenuNetTotalGlobal"
+            formControlName="revenuNetTotalGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.revenuTaxeTotalGlobal"
+            for="field_revenuTaxeTotalGlobal"
+            >Revenu Taxe Total Global</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="revenuTaxeTotalGlobal"
+            id="field_revenuTaxeTotalGlobal"
+            data-cy="revenuTaxeTotalGlobal"
+            formControlName="revenuTaxeTotalGlobal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.prodRevenuChambre" for="field_prodRevenuChambre"
+            >Prod Revenu Chambre</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prodRevenuChambre"
+            id="field_prodRevenuChambre"
+            data-cy="prodRevenuChambre"
+            formControlName="prodRevenuChambre"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.prodRevenuBq" for="field_prodRevenuBq"
+            >Prod Revenu Bq</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prodRevenuBq"
+            id="field_prodRevenuBq"
+            data-cy="prodRevenuBq"
+            formControlName="prodRevenuBq"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.prodRevenuExtra" for="field_prodRevenuExtra"
+            >Prod Revenu Extra</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prodRevenuExtra"
+            id="field_prodRevenuExtra"
+            data-cy="prodRevenuExtra"
+            formControlName="prodRevenuExtra"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.prodRevenuTotal" for="field_prodRevenuTotal"
+            >Prod Revenu Total</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prodRevenuTotal"
+            id="field_prodRevenuTotal"
+            data-cy="prodRevenuTotal"
+            formControlName="prodRevenuTotal"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmOResv.prodChambreNbNuitees"
+            for="field_prodChambreNbNuitees"
+            >Prod Chambre Nb Nuitees</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            name="prodChambreNbNuitees"
+            id="field_prodChambreNbNuitees"
+            data-cy="prodChambreNbNuitees"
+            formControlName="prodChambreNbNuitees"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.techCreateDate" for="field_techCreateDate"
+            >Tech Create Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_techCreateDate"
+              data-cy="techCreateDate"
+              type="text"
+              class="form-control"
+              name="techCreateDate"
+              ngbDatepicker
+              #techCreateDateDp="ngbDatepicker"
+              formControlName="techCreateDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="techCreateDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmOResv.techUpdateDate" for="field_techUpdateDate"
+            >Tech Update Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_techUpdateDate"
+              data-cy="techUpdateDate"
+              type="text"
+              class="form-control"
+              name="techUpdateDate"
+              ngbDatepicker
+              #techUpdateDateDp="ngbDatepicker"
+              formControlName="techUpdateDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="techUpdateDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel"
+            >__jhiTransformTranslate__('entity.action.cancel')</span
+          >
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save"
+            >__jhiTransformTranslate__('entity.action.save')</span
+          >
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

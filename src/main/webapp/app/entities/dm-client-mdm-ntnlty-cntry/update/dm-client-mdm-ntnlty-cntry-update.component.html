@@ -1,0 +1,280 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2
+        id="jhi-dm-client-mdm-ntnlty-cntry-heading"
+        data-cy="DmClientMdmNtnltyCntryCreateUpdateHeading"
+        jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.createOrEditLabel"
+      >
+        __jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.createOrEditLabel')
+      </h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" jhiTranslate="global.field.id" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.prtyFk" for="field_prtyFk"
+            >Prty Fk</label
+          >
+          <input type="text" class="form-control" name="prtyFk" id="field_prtyFk" data-cy="prtyFk" formControlName="prtyFk" />
+          <div *ngIf="editForm.get('prtyFk')!.invalid && (editForm.get('prtyFk')!.dirty || editForm.get('prtyFk')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('prtyFk')?.errors?.required" jhiTranslate="entity.validation.required"
+              >__jhiTransformTranslate__('entity.validation.required')</small
+            >
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstNtnltFrmt"
+            for="field_frstNtnltFrmt"
+            >Frst Ntnlt Frmt</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="frstNtnltFrmt"
+            id="field_frstNtnltFrmt"
+            data-cy="frstNtnltFrmt"
+            formControlName="frstNtnltFrmt"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstContinent"
+            for="field_frstContinent"
+            >Frst Continent</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="frstContinent"
+            id="field_frstContinent"
+            data-cy="frstContinent"
+            formControlName="frstContinent"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndNtnltFrmt"
+            for="field_scndNtnltFrmt"
+            >Scnd Ntnlt Frmt</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="scndNtnltFrmt"
+            id="field_scndNtnltFrmt"
+            data-cy="scndNtnltFrmt"
+            formControlName="scndNtnltFrmt"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndContinent"
+            for="field_scndContinent"
+            >Scnd Continent</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="scndContinent"
+            id="field_scndContinent"
+            data-cy="scndContinent"
+            formControlName="scndContinent"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdNtnltFrmt"
+            for="field_thrdNtnltFrmt"
+            >Thrd Ntnlt Frmt</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="thrdNtnltFrmt"
+            id="field_thrdNtnltFrmt"
+            data-cy="thrdNtnltFrmt"
+            formControlName="thrdNtnltFrmt"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdContinent"
+            for="field_thrdContinent"
+            >Thrd Continent</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="thrdContinent"
+            id="field_thrdContinent"
+            data-cy="thrdContinent"
+            formControlName="thrdContinent"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthNtnltFrmt"
+            for="field_frthNtnltFrmt"
+            >Frth Ntnlt Frmt</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="frthNtnltFrmt"
+            id="field_frthNtnltFrmt"
+            data-cy="frthNtnltFrmt"
+            formControlName="frthNtnltFrmt"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthContinent"
+            for="field_frthContinent"
+            >Frth Continent</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="frthContinent"
+            id="field_frthContinent"
+            data-cy="frthContinent"
+            formControlName="frthContinent"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techLineage" for="field_techLineage"
+            >Tech Lineage</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="techLineage"
+            id="field_techLineage"
+            data-cy="techLineage"
+            formControlName="techLineage"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techCreatedDate"
+            for="field_techCreatedDate"
+            >Tech Created Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_techCreatedDate"
+              data-cy="techCreatedDate"
+              type="text"
+              class="form-control"
+              name="techCreatedDate"
+              ngbDatepicker
+              #techCreatedDateDp="ngbDatepicker"
+              formControlName="techCreatedDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="techCreatedDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label
+            class="form-label"
+            jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techUpdatedDate"
+            for="field_techUpdatedDate"
+            >Tech Updated Date</label
+          >
+          <div class="input-group">
+            <input
+              id="field_techUpdatedDate"
+              data-cy="techUpdatedDate"
+              type="text"
+              class="form-control"
+              name="techUpdatedDate"
+              ngbDatepicker
+              #techUpdatedDateDp="ngbDatepicker"
+              formControlName="techUpdatedDate"
+            />
+            <button type="button" class="btn btn-secondary" (click)="techUpdatedDateDp.toggle()">
+              <fa-icon icon="calendar-alt"></fa-icon>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techMapping" for="field_techMapping"
+            >Tech Mapping</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="techMapping"
+            id="field_techMapping"
+            data-cy="techMapping"
+            formControlName="techMapping"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label" jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techComment" for="field_techComment"
+            >Tech Comment</label
+          >
+          <input
+            type="text"
+            class="form-control"
+            name="techComment"
+            id="field_techComment"
+            data-cy="techComment"
+            formControlName="techComment"
+          />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel"
+            >__jhiTransformTranslate__('entity.action.cancel')</span
+          >
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save"
+            >__jhiTransformTranslate__('entity.action.save')</span
+          >
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

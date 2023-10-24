@@ -1,0 +1,235 @@
+<div>
+  <h2 id="page-heading" data-cy="DmClientMdmNtnltyCntryHeading">
+    <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.title"
+      >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.title')</span
+    >
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info me-2" (click)="load()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.refreshListLabel"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.refreshListLabel')</span
+        >
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-dm-client-mdm-ntnlty-cntry"
+        [routerLink]="['/dm-client-mdm-ntnlty-cntry/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.createLabel"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.createLabel')</span
+        >
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="dmClientMdmNtnltyCntries?.length === 0">
+    <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.notFound"
+      >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.home.notFound')</span
+    >
+  </div>
+
+  <div class="table-responsive table-entities" id="entities" *ngIf="dmClientMdmNtnltyCntries && dmClientMdmNtnltyCntries.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" (sortChange)="navigateToWithComponentValues()">
+          <th scope="col" jhiSortBy="id">
+            <div class="d-flex">
+              <span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span>
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="prtyFk">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.prtyFk"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.prtyFk')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frstNtnltFrmt">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstNtnltFrmt"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstNtnltFrmt')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frstContinent">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstContinent"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frstContinent')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scndNtnltFrmt">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndNtnltFrmt"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndNtnltFrmt')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="scndContinent">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndContinent"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.scndContinent')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="thrdNtnltFrmt">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdNtnltFrmt"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdNtnltFrmt')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="thrdContinent">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdContinent"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.thrdContinent')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frthNtnltFrmt">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthNtnltFrmt"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthNtnltFrmt')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="frthContinent">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthContinent"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.frthContinent')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techLineage">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techLineage"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techLineage')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techCreatedDate">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techCreatedDate"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techCreatedDate')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techUpdatedDate">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techUpdatedDate"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techUpdatedDate')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techMapping">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techMapping"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techMapping')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col" jhiSortBy="techComment">
+            <div class="d-flex">
+              <span jhiTranslate="tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techComment"
+                >__jhiTransformTranslate__('tableauRealTimeApplicationApp.dmClientMdmNtnltyCntry.techComment')</span
+              >
+              <fa-icon class="p-1" icon="sort"></fa-icon>
+            </div>
+          </th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let dmClientMdmNtnltyCntry of dmClientMdmNtnltyCntries; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/dm-client-mdm-ntnlty-cntry', dmClientMdmNtnltyCntry.id, 'view']">{{ dmClientMdmNtnltyCntry.id }}</a>
+          </td>
+          <td>{{ dmClientMdmNtnltyCntry.prtyFk }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.frstNtnltFrmt }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.frstContinent }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.scndNtnltFrmt }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.scndContinent }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.thrdNtnltFrmt }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.thrdContinent }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.frthNtnltFrmt }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.frthContinent }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.techLineage }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.techCreatedDate | formatMediumDate }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.techUpdatedDate | formatMediumDate }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.techMapping }}</td>
+          <td>{{ dmClientMdmNtnltyCntry.techComment }}</td>
+          <td class="text-end">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/dm-client-mdm-ntnlty-cntry', dmClientMdmNtnltyCntry.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">__jhiTransformTranslate__('entity.action.view')</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/dm-client-mdm-ntnlty-cntry', dmClientMdmNtnltyCntry.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">__jhiTransformTranslate__('entity.action.edit')</span>
+              </button>
+
+              <button type="submit" (click)="delete(dmClientMdmNtnltyCntry)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete"
+                  >__jhiTransformTranslate__('entity.action.delete')</span
+                >
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div *ngIf="dmClientMdmNtnltyCntries && dmClientMdmNtnltyCntries.length > 0">
+    <div class="d-flex justify-content-center">
+      <jhi-item-count [params]="{ page: page, totalItems: totalItems, itemsPerPage: itemsPerPage }"></jhi-item-count>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <ngb-pagination
+        [collectionSize]="totalItems"
+        [page]="page"
+        [pageSize]="itemsPerPage"
+        [maxSize]="5"
+        [rotate]="true"
+        [boundaryLinks]="true"
+        (pageChange)="navigateToPage($event)"
+      ></ngb-pagination>
+    </div>
+  </div>
+</div>

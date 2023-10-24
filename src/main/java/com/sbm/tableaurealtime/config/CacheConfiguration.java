@@ -48,6 +48,10 @@ public class CacheConfiguration {
             createCache(cm, com.sbm.tableaurealtime.domain.User.class.getName());
             createCache(cm, com.sbm.tableaurealtime.domain.Authority.class.getName());
             createCache(cm, com.sbm.tableaurealtime.domain.User.class.getName() + ".authorities");
+            createCache(cm, com.sbm.tableaurealtime.domain.DmClientMdmAddrCntry.class.getName());
+            createCache(cm, com.sbm.tableaurealtime.domain.DmClientMdmNtnltyCntry.class.getName());
+            createCache(cm, com.sbm.tableaurealtime.domain.FtOResv.class.getName());
+            createCache(cm, com.sbm.tableaurealtime.domain.DmOResv.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

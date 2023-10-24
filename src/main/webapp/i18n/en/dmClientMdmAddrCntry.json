@@ -1,0 +1,37 @@
+{
+  "tableauRealTimeApplicationApp": {
+    "dmClientMdmAddrCntry": {
+      "home": {
+        "title": "Dm Client Mdm Addr Cntries",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Dm Client Mdm Addr Cntry",
+        "createOrEditLabel": "Create or edit a Dm Client Mdm Addr Cntry",
+        "notFound": "No Dm Client Mdm Addr Cntries found"
+      },
+      "created": "A new Dm Client Mdm Addr Cntry is created with identifier {{ param }}",
+      "updated": "A Dm Client Mdm Addr Cntry is updated with identifier {{ param }}",
+      "deleted": "A Dm Client Mdm Addr Cntry is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dm Client Mdm Addr Cntry {{ id }}?"
+      },
+      "detail": {
+        "title": "Dm Client Mdm Addr Cntry"
+      },
+      "id": "ID",
+      "prtyFk": "Prty Fk",
+      "frstCntryFrmt": "Frst Cntry Frmt",
+      "frstContinent": "Frst Continent",
+      "scndCntryFrmt": "Scnd Cntry Frmt",
+      "scndContinent": "Scnd Continent",
+      "thrdCntryFrmt": "Thrd Cntry Frmt",
+      "thrdContinent": "Thrd Continent",
+      "frthCntryFrmt": "Frth Cntry Frmt",
+      "frthContinent": "Frth Continent",
+      "techLineage": "Tech Lineage",
+      "techCreatedDate": "Tech Created Date",
+      "techUpdatedDate": "Tech Updated Date",
+      "techMapping": "Tech Mapping",
+      "techComment": "Tech Comment"
+    }
+  }
+}

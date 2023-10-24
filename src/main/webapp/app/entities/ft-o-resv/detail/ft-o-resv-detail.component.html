@@ -1,0 +1,804 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="ftOResv">
+      <h2 data-cy="ftOResvDetailsHeading">
+        <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.detail.title"
+          >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.detail.title')</span
+        >
+      </h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">__jhiTransformTranslate__('global.field.id')</span></dt>
+        <dd>
+          <span>{{ ftOResv.id }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numLigne"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numLigne')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.numLigne }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resort"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resort')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.resort }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resvNameId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resvNameId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.resvNameId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.clientOId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.clientOId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.clientOId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChb"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChb')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.typeChb }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.businessDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.businessDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.businessDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numOrdre"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numOrdre')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.numOrdre }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.confirmationNo"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.confirmationNo')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.confirmationNo }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.clientMdmId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.clientMdmId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.clientMdmId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nameId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nameId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nameId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nameIdLigne"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nameIdLigne')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nameIdLigne }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.contactId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.contactId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.contactId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.agenceId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.agenceId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.agenceId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.agenceNom"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.agenceNom')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.agenceNom }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.societeId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.societeId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.societeId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.groupeId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.groupeId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.groupeId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.membreId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.membreId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.membreId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.sourceProfileId"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.sourceProfileId')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.sourceProfileId }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numBloc"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numBloc')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.numBloc }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.statutResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutVip"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutVip')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.statutVip }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateDebutLigne"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateDebutLigne')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.dateDebutLigne | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateFinLigne"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateFinLigne')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.dateFinLigne | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateFinOrigine"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateFinOrigine')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.dateFinOrigine | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.dateAnn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.dateAnn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.dateAnn | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.pseudoRoomYn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.pseudoRoomYn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.pseudoRoomYn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.complementaireYn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.complementaireYn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.complementaireYn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.interneYn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.interneYn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.interneYn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.walkinYn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.walkinYn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.walkinYn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.createurResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.createurResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.createurResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nomCreateurResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nomCreateurResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nomCreateurResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codePays"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codePays')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codePays }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libPays"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libPays')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libPays }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeNationalite"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeNationalite')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeNationalite }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libNationalite"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libNationalite')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libNationalite }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeSource"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeSource')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeSource }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libSource"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libSource')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libSource }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeGrandSource"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeGrandSource')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeGrandSource }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeOrigine"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeOrigine')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeOrigine }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libOrigine"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libOrigine')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libOrigine }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeMarche"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeMarche')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeMarche }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libMarche"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libMarche')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libMarche }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeGrandMarche"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeGrandMarche')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeGrandMarche }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libGrandMarche"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libGrandMarche')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libGrandMarche }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codePrix"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codePrix')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codePrix }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.categPrix"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.categPrix')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.categPrix }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.libPrix"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.libPrix')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.libPrix }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.numChb"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.numChb')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.numChb }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChbLigne"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChbLigne')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.typeChbLigne }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.descriptionTypeChb"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.descriptionTypeChb')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.descriptionTypeChb }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeTypeChb"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeTypeChb')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeTypeChb }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.classChb"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.classChb')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.classChb }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.statutChbResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.statutChbResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.statutChbResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.typeChbDeReservation"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.typeChbDeReservation')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.typeChbDeReservation }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.descriptionTypeChbDeResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.descriptionTypeChbDeResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.descriptionTypeChbDeResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.codeTypeChbDeResv"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.codeTypeChbDeResv')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.codeTypeChbDeResv }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.circuitDistribution"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.circuitDistribution')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.circuitDistribution }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.circuitDistribUserRegroup"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.circuitDistribUserRegroup')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.circuitDistribUserRegroup }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbResvAnn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbResvAnn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbResvAnn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuitee"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuitee')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbNuitee }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuiteeNnDed"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuiteeNnDed')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbNuiteeNnDed }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbNuiteeGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbNuiteeGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbNuiteeGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbOccupationMultiple"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbOccupationMultiple')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbOccupationMultiple }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbAduGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbAduGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbAduGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbEnfGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbEnfGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbEnfGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersDayUGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersDayUGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbPersDayUGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersArrGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersArrGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbPersArrGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersDepGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersDepGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbPersDepGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersAnn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersAnn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbPersAnn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbPersNoshow"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbPersNoshow')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbPersNoshow }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbDayUGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbDayUGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbChbDayUGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbArrGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbArrGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbChbArrGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbDepGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbDepGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbChbDepGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbAnn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbAnn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbChbAnn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.nbChbNoshow"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.nbChbNoshow')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.nbChbNoshow }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetChambreGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetChambreGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuNetChambreGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeChambreGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeChambreGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuTaxeChambreGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetBqGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetBqGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuNetBqGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeBqGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeBqGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuTaxeBqGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetExtraGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetExtraGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuNetExtraGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeExtraGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeExtraGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuTaxeExtraGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuNetTotalGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuNetTotalGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuNetTotalGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.revenuTaxeTotalGlobal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.revenuTaxeTotalGlobal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.revenuTaxeTotalGlobal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuChambre"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuChambre')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.prodRevenuChambre }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuBq"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuBq')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.prodRevenuBq }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuExtra"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuExtra')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.prodRevenuExtra }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodRevenuTotal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodRevenuTotal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.prodRevenuTotal }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.prodChambreNbNuitees"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.prodChambreNbNuitees')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.prodChambreNbNuitees }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.datesSejourRensYn"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.datesSejourRensYn')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.datesSejourRensYn }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techEventType"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techEventType')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techEventType }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techResvInvType"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techResvInvType')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techResvInvType }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techOrigine"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techOrigine')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techOrigine }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techGrpNumOrdre"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techGrpNumOrdre')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techGrpNumOrdre }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techCreateDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techCreateDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techCreateDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.techUpdateDate"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.techUpdateDate')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.techUpdateDate | formatMediumDate }}</span>
+        </dd>
+        <dt>
+          <span jhiTranslate="tableauRealTimeApplicationApp.ftOResv.resvNameIdPrincipal"
+            >__jhiTransformTranslate__('tableauRealTimeApplicationApp.ftOResv.resvNameIdPrincipal')</span
+          >
+        </dt>
+        <dd>
+          <span>{{ ftOResv.resvNameIdPrincipal }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"
+          >__jhiTransformTranslate__('entity.action.back')</span
+        >
+      </button>
+
+      <button type="button" [routerLink]="['/ft-o-resv', ftOResv.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"
+          >__jhiTransformTranslate__('entity.action.edit')</span
+        >
+      </button>
+    </div>
+  </div>
+</div>
