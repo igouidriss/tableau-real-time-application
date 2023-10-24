@@ -1,0 +1,265 @@
+entity DmClientMdmAddrCntry {
+prtyFk	String required
+frstCntryFrmt	String 
+frstContinent	String 
+scndCntryFrmt	String 
+scndContinent	String 
+thrdCntryFrmt	String 
+thrdContinent	String 
+frthCntryFrmt	String 
+frthContinent	String 
+techLineage	String 
+techCreatedDate	LocalDate
+techUpdatedDate	LocalDate
+techMapping	String 
+techComment	String 
+}
+
+entity DmClientMdmNtnltyCntry {	
+prtyFk	String required
+frstNtnltFrmt	String
+frstContinent	String
+scndNtnltFrmt	String
+scndContinent	String
+thrdNtnltFrmt	String
+thrdContinent	String
+frthNtnltFrmt	String
+frthContinent	String
+techLineage	String
+techCreatedDate	LocalDate
+techUpdatedDate	LocalDate
+techMapping	String
+techComment	String
+}
+
+/**
+ * The Employee entity.
+ */
+entity FtOResv {
+	
+numLigne	Integer
+resort	String
+resvNameId	Integer
+clientOId	String
+typeChb	String
+businessDate	LocalDate
+numOrdre	Integer
+confirmationNo	String
+clientMdmId	String
+nameId	Integer
+nameIdLigne	Integer
+contactId	Integer
+agenceId	Integer
+agenceNom	String
+societeId	Integer
+groupeId	Integer
+membreId	Integer
+sourceProfileId	Integer
+numBloc	Integer
+statutResv	String
+statutVip	String
+dateDebutLigne	LocalDate
+dateFinLigne	LocalDate
+dateFinOrigine	LocalDate
+dateAnn	LocalDate
+pseudoRoomYn	String
+complementaireYn	String
+interneYn	String
+walkinYn	String
+createurResv	Integer
+nomCreateurResv	String
+codePays	String
+libPays	String
+codeNationalite	String
+libNationalite	String
+codeSource	String
+libSource	String
+codeGrandSource	String
+codeOrigine	String
+libOrigine	String
+codeMarche	String
+libMarche	String
+codeGrandMarche	String
+libGrandMarche	String
+codePrix	String
+categPrix	String
+libPrix	String
+numChb	String
+typeChbLigne	String
+descriptionTypeChb	String
+codeTypeChb	String
+classChb	String
+statutChbResv	String
+typeChbDeReservation	String
+descriptionTypeChbDeResv	String
+codeTypeChbDeResv	String
+circuitDistribution	String
+circuitDistribUserRegroup	String
+nbResvAnn	Integer
+nbNuitee	Integer
+nbNuiteeNnDed	Integer
+nbNuiteeGlobal	Integer
+nbOccupationMultiple	Integer
+nbAduGlobal	Integer
+nbEnfGlobal	Integer
+nbPersDayUGlobal	Integer
+nbPersArrGlobal	Integer
+nbPersDepGlobal	Integer
+nbPersAnn	Integer
+nbPersNoshow	Integer
+nbChbDayUGlobal	Integer
+nbChbArrGlobal	Integer
+nbChbDepGlobal	Integer
+nbChbAnn	Integer
+nbChbNoshow	Integer
+revenuNetChambreGlobal	Long
+revenuTaxeChambreGlobal	Long
+revenuNetBqGlobal	Long
+revenuTaxeBqGlobal	Long
+revenuNetExtraGlobal	Long
+revenuTaxeExtraGlobal	Long
+revenuNetTotalGlobal	Long
+revenuTaxeTotalGlobal	Long
+prodRevenuChambre	Long
+prodRevenuBq	Long
+prodRevenuExtra	Long
+prodRevenuTotal	Long
+prodChambreNbNuitees	Long
+datesSejourRensYn	String
+techEventType	String
+techResvInvType	String
+techOrigine	String
+techGrpNumOrdre	Integer
+techCreateDate	LocalDate
+techUpdateDate	LocalDate
+resvNameIdPrincipal	Integer
+
+}
+
+entity DmOResv {
+numLigne	Integer
+resort	String
+resvNameId	Integer
+clientOId	String
+typeChb	String
+confirmationNo	String
+clientMdmId	String
+nameId	Integer
+parentResvNameId	Integer
+contactId	Integer
+agenceId	Integer
+agenceNom	String
+societeId	Integer
+groupeId	Integer
+numBloc	Integer
+typeResv	String
+statutResv	String
+dateDebutResv	LocalDate
+dateFinResv	LocalDate
+truncDateDebutResv	LocalDate
+truncDateFinResv	LocalDate
+dateAnnResv	LocalDate
+pseudoRoomYn	String
+createurResv	Integer
+nomCreateurResv	String
+codeGarantie	String
+flgDed	String
+codePays	String
+libPays	String
+codeNationalite	String
+libNationalite	String
+codeSource	String
+libSource	String
+codeGrandSource	String
+codeOrigine	String
+libOrigine	String
+codeMarche	String
+libMarche	String
+codeGrandMarche	String
+libGrandMarche	String
+codePrix	String
+categPrix	String
+libPrix	String
+numChb	String
+descriptionTypeChb	String
+codeTypeChb	String
+classChb	String
+caractChb	String
+typeChbDeReservation	String
+descriptionTypeChbDeResv	String
+codeTypeChbDeResv	String
+statutDeReservation	String
+circuitDistribution	String
+circuitDistribUserRegroup	String
+numCrs	String
+typeRefCrs	String
+crsInsertDate	LocalDate
+dateCreaResv	LocalDate
+datePremier	LocalDate
+statutPremier	String
+dateDernier	LocalDate
+statutDernier	String
+dateDernierPseudo	LocalDate
+statutDernierPseudo	String
+diffDtCreaAnn	Integer
+diffDtArrAnn	Integer
+leadtime	Integer
+los	Integer
+occupantsGroupe	String
+nbNuitee	Integer
+nbNuiteeNnDed	Integer
+nbResvAnn	Integer
+nbAdu	Integer
+nbEnf	Integer
+nbPersDayU	Integer
+nbPersArr	Integer
+nbPersDep	Integer
+nbPersAnn	Integer
+nbPersNoshow	Integer
+nbChbDayU	Integer
+nbChbArr	Integer
+nbChbDep	Integer
+nbChbAnn	Integer
+nbChbNoshow	Integer
+revenuNetChambre	Long
+revenuTaxeChambre	Long
+revenuNetChambreGlobal	Long
+revenuTaxeChambreGlobal	Long
+revenuNetBq	Long
+revenuTaxeBq	Long
+revenuNetBqGlobal	Long
+revenuTaxeBqGlobal	Long
+revenuNetExtra	Long
+revenuTaxeExtra	Long
+revenuNetExtraGlobal	Long
+revenuTaxeExtraGlobal	Long
+revenuNetTotal	Long
+revenuTaxeTotal	Long
+revenuNetTotalGlobal	Long
+revenuTaxeTotalGlobal	Long
+prodRevenuChambre	Long
+prodRevenuBq	Long
+prodRevenuExtra	Long
+prodRevenuTotal	Long
+prodChambreNbNuitees	Long
+techCreateDate	LocalDate
+techUpdateDate	LocalDate
+
+}
+
+paginate DmOResv with pagination
+
+paginate FtOResv with pagination
+
+paginate DmClientMdmAddrCntry with pagination
+
+paginate DmClientMdmNtnltyCntry with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Employee, Job
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
